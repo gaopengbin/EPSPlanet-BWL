@@ -1,0 +1,4 @@
+**.d.ts
+/packages/epsplanet
+dist
+node_modules

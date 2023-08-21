@@ -1,0 +1,29 @@
+{
+  "name": "epsplanet",
+  "version": "2.0.0",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "files": [
+    "es",
+    "lib"
+  ],
+  "keywords": [
+    "epsplanet-bwl",
+    "cesium",
+    "epsgis",
+    "epsplanet",
+    "vue3组件库"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "author": "gpb",
+  "license": "MIT",
+  "description": "",
+  "typings": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {}
+}
