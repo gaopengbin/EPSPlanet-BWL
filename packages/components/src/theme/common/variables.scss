@@ -1,0 +1,51 @@
+@use "sass:map";
+
+//用于多样式切换
+//面板背景色
+$panel-bg-color: () !default;
+$panel-bg-color: map.merge(
+    (
+        "light": #ffffff,
+        "dark": #2c2f38,
+    ),
+    $panel-bg-color
+);
+//标头背景色
+$title-bg-color: () !default;
+$title-bg-color: map.merge(
+    (
+        "light": #f1f1f1,
+        "dark": #383b46,
+    ),
+    $title-bg-color
+);
+//面板上的字体色
+$panel-font-color: () !default;
+$panel-font-color: map.merge(
+    (
+        "light": #000000,
+        "dark": #ffffff,
+    ),
+    $panel-font-color
+);
+//面板按钮上的字体色
+$panel-btn-font-color: () !default;
+$panel-btn-font-color: map.merge(
+    (
+        "light": #ffffff,
+        "dark": #ffffff,
+    ),
+    $panel-btn-font-color
+);
+//功能按钮色
+$button-primary-color: () !default;
+$button-primary-color: map.merge(
+    (
+        "light": #2391f2,
+        "dark": #5b5f6a,
+    ),
+    $button-primary-color
+);
+
+//单一样式值
+$font-family: Arial, Helvetica, sans-serif;

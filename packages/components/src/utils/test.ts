@@ -1,5 +1,5 @@
 export function test() {
-    console.log('test');
+  console.log('test');
 }
 
 /**
@@ -7,6 +7,6 @@ export function test() {
  * @param a 参数a
  */
 export function test2(a: any) {
-    console.log('test2', a);
+  console.log('test2', a);
 }
 // export function test3() {}

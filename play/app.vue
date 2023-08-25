@@ -10,25 +10,63 @@
     <ea-earth />
     <Button>123</Button>
     <Earth /> -->
-    <Test />
-    <el-button></el-button>
-    <ep-earth @onReady="ready" />
+    <Test :title="''" />
+    <el-button @click="openPanel">弹框测试</el-button>
+
+    <EpsplanetEarth container="testA" :showDefaultBasemap="true" @onReady="ready" :showCompass="showCompass" />
+    <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
+      <Child />
+    </EpsplanetButton>
     <!-- <ElButton></ElButton> -->
+
+    <!-- <Earth :container="'tes'" /> -->
   </div>
 </template>
 <script lang="ts" setup>
-import { test, test2, emitter, useEarth } from 'epsplanet'
-// import { test } from 'epsplanet/lib/src/utils'
-// test2(1)
-// useEarth().then((res) => {
-//   console.log(res)
-// })
-// console.log(test, test2, emitter)
+import { getCurrentInstance, ref, h } from 'vue';
+// import { useEarth, Earth, Test } from 'epsplanet';
+// import { useEarth, Earth, Test, usePanel, getWidgets, haveRendered } from 'epsplanet';
+import { useEarth, Earth, Test, usePanel, getWidgets, haveRendered } from '@epsplanet/components';
+import Child from './child.vue';
 
+const context = getCurrentInstance();
+// console.log(context);
+const position = ref({
+  left: 10,
+  top: 600
+});
+const panel = ref({
+  size: {
+    width: '300px',
+    height: '300px'
+  },
+  position: {
+    left: 10,
+    top: 10
+  }
+});
+// let earth = useEarth();
+const showCompass = ref(true);
 const ready = (e: any) => {
-  console.log(e)
-}
-// import {} from ''
-// import { Button } from '@epsplanet/components';
-// import { Earth } from '@epsplanet/components';
+  // console.log(e);
+};
+const openPanel = async () => {
+  console.log(getWidgets(), haveRendered(h(Child)));
+  let wgt = usePanel({
+    title: '测试',
+    component: 'Child',
+    type: 'panel',
+    panel: {
+      size: {
+        width: '300px',
+        height: '300px'
+      },
+      position: {
+        left: 10,
+        top: 10
+      }
+    }
+  }, context?.appContext, h(Child))
+  console.log(wgt, await wgt.getComponent());
+};
 </script>

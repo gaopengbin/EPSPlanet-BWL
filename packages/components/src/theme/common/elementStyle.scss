@@ -1,0 +1,247 @@
+.el-switch__core {
+    border-radius: 2px !important;
+    .el-switch__action {
+        border-radius: 2px !important;
+    }
+}
+.el-input > .el-input__wrapper {
+    width: 356px;
+    height: 30px;
+    // border: 1px solid #dbe2ff;
+    background-color: transparent !important;
+    .el-input__inner {
+        background-color: transparent !important;
+        color: #dbe2ff;
+    }
+}
+.el-input-number .el-input {
+    display: flex;
+}
+.el-input .el-input__count .el-input__count-inner {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+.el-input-number__decrease,
+.el-input-number__increase {
+    background-color: #3756d5 !important;
+    color: #fff !important;
+}
+.el-switch.is-checked .el-switch__core {
+    border: transparent 1px solid !important;
+    border-radius: 2px;
+    background: linear-gradient(3.35deg, #585cf6 0%, #80dcff 100%);
+    box-shadow: 0 0 4px rgba(83, 163, 255, 0.65);
+    box-shadow: 0 0 4px rgba(103, 189, 255, 0.75) inset;
+}
+.el-switch__core {
+    border: #fff 1px solid !important;
+    background-color: transparent !important;
+}
+.epsplanet-panel-base {
+    .xbsj-foot-ul {
+        span {
+            color: #dbe2ff;
+        }
+    }
+    // .tool-panel-button {
+    //     position: sticky;
+    //     bottom: 10px;
+    // }
+    .el-button + .el-button {
+        margin-left: 24px;
+    }
+    .el-button--small,
+    .el-button--small.is-disabled {
+        width: 124px;
+        height: 35px;
+        // margin-left: 24px;
+        border-radius: 2px;
+        background: linear-gradient(190.23deg, #282ba4 0%, #0a0d80 100%);
+        box-shadow: 0 0 4px #67bdff inset;
+        box-shadow: 0 0 4px #53a3ff;
+        font-family: ".PingFang SC S0pxibold";
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 0.04px;
+        color: #fff;
+        border: none;
+    }
+    .el-button--small.is-disabled:hover {
+        color: #fff;
+        border: none;
+        background: linear-gradient(190.23deg, #282ba4 0%, #0a0d80 100%);
+        // margin-left: 24px;
+    }
+    .el-button.tool {
+        width: 100px;
+        height: 30px;
+        margin-right: 24px;
+        box-shadow: 0 0 4px #53a3ff;
+        box-shadow: 0 0 4px #67bdff inset;
+        background: linear-gradient(190.23deg, #282ba4 0%, #0a0d80 100%);
+        font-family: ".PingFang SC";
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 0.05px;
+        line-height: 18px;
+        text-align: left;
+        color: #fff;
+        text-shadow: 0 3px 4px #101387;
+        border: none;
+    }
+    &.lineOfSight {
+        span {
+            color: #fff;
+        }
+    }
+    textarea {
+        background-color: transparent;
+        color: #dbe2ff;
+        border-color: #585df67e;
+        padding: 10px;
+    }
+}
+.el-slider {
+    width: 376px !important;
+    .el-slider__runway {
+        background-color: rgba(128, 130, 239, 1);
+    }
+    .el-slider__bar {
+        background-color: rgba(219, 226, 255, 1);
+    }
+    .el-slider__button {
+        border: none;
+    }
+}
+.el-form-item__label {
+    font-family: ".PingFang SC";
+    font-weight: 400;
+    font-size: 14px !important;
+    letter-spacing: 0.05px;
+    line-height: 18px;
+    text-align: right;
+    color: #dbe2ff !important;
+}
+.el-form-item__content {
+    .el-icon {
+        color: #dbe2ff;
+        font-size: 22px !important;
+    }
+}
+.epsplanet-popover {
+    box-shadow: 0 0 40px #3756d5 inset !important;
+    background: rgba(4, 37, 72, 0.95) !important;
+}
+.tool-panel {
+    .epsplanet-panel-base {
+        background-color: transparent;
+    }
+    .tool-header,
+    .el-dialog__header {
+        border-bottom: none !important;
+        background: rgba(137, 186, 223, 0.28) !important;
+        font-family: ".PingFang SC S0pxibold";
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-align: left;
+        color: #fff !important;
+        padding-left: 10px !important;
+        i {
+            border: 1px dashed #ffffff54;
+            margin-right: 5px;
+            padding: 1px 0 1px 2px;
+            &:hover {
+                color: #80dcff !important;
+            }
+        }
+    }
+    .el-dialog {
+        background: rgba(4, 37, 72, 0.95) !important;
+    }
+}
+.el-table {
+    background-color: transparent !important;
+    th.el-table__cell {
+        background-color: #89badf7e !important;
+        text-align: center;
+        color: #dbe2ff !important;
+        font-size: 14px;
+        font-weight: normal;
+        i {
+            color: #fff;
+        }
+    }
+    tr {
+        background-color: transparent !important;
+    }
+    .el-table__body tr.hover-row > td.el-table__cell {
+        background-color: #89badf7e !important;
+    }
+}
+
+.el-table__body td.el-table__cell {
+    background-color: transparent !important;
+    color: #dbe2ff;
+    text-align: center;
+    i {
+        color: #fff;
+    }
+}
+
+.el-select-dropdown__wrap {
+    background: rgba(4, 37, 72, 0.95);
+    box-shadow: 0 0 40px #3756d5;
+}
+.el-select-dropdown__item {
+    color: #fff !important;
+}
+.el-select-dropdown__item.hover,
+.el-select-dropdown__item:hover {
+    background-color: rgba(137, 186, 223, 0.28) !important;
+}
+.el-popper.is-light {
+    background: rgba(4, 37, 72, 0.95) !important;
+    box-shadow: 0 0 40px #3756d5 inset;
+    // button{
+    //     background: linear-gradient(190.23deg, #282ba4 0%, #0a0d80 100%);
+    //     box-shadow: 0 0 4px #67bdff inset;
+    // }
+}
+.el-popper.is-customized {
+    /* Set padding to ensure the height is 32px */
+    color: #fff;
+    background: rgba(4, 37, 72, 0.95);
+    box-shadow: 0 0 40px #3756d5 inset;
+}
+.el-popper.is-customized .el-popper__arrow::before {
+    background: #3756d5;
+    right: 0;
+}
+.el-collapse {
+    border-top-color: #585df600 !important;
+    .el-collapse-item__header {
+        background-color: transparent;
+        color: #dbe2ff;
+        border-top-color: #585df600 !important;
+        border-bottom-color: #585df67e !important;
+    }
+    .el-collapse-item__wrap,
+    .el-collapse-item__content {
+        background-color: transparent;
+        border-color: #585df67e !important;
+    }
+}
+
+.el-tabs__item.is-top{
+    color: #dbe2ff;
+}
+.el-upload-dragger{
+    background-color: transparent !important;
+}
+.el-upload-list__item:hover{
+    background-color: transparent !important;
+}
+.demonstration{
+    color: #dbe2ff !important;
+}

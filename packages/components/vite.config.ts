@@ -4,10 +4,7 @@ import vue from '@vitejs/plugin-vue';
 import dts from 'vite-plugin-dts';
 // @ts-ignore
 import DefineOptions from 'unplugin-vue-define-options/vite';
-
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import scss from 'rollup-plugin-scss';
 
 export default defineConfig({
   test: {
@@ -19,7 +16,15 @@ export default defineConfig({
     rollupOptions: {
       //忽略不需要打包的文件
       // external: ['vue', /\.less/],
-      external: ['vue', /\.less/, '@epsplanet/utils', 'mitt', 'element-plus', 'element-plus/theme-chalk/index.css'],
+      external: ['vue',
+        '@epsplanet/utils',
+        'mitt',
+        'element-plus',
+        'element-plus/theme-chalk/index.css',
+        'pinia',
+        'axios',
+        '@vue/shared',
+      ],
       input: ['index.ts'],
       output: [
         {
@@ -43,7 +48,10 @@ export default defineConfig({
           exports: 'named',
           //配置打包根目录
           dir: '../epsplanet/lib'
-        }
+        },
+      ],
+      plugins: [
+        scss()
       ]
     },
     lib: {
@@ -54,29 +62,37 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      entryRoot: 'src',
+      entryRoot: './src',
       outputDir: ['../epsplanet/es/src', '../epsplanet/lib/src'],
       //指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
-      tsConfigFilePath: '../../tsconfig.json'
+      tsConfigFilePath: '../../tsconfig.json',
+      // skipDiagnostics: false,
+      // logDiagnostics: true,
     }),
     DefineOptions(),
-    {
-      name: 'style',
-      generateBundle(config, bundle) {
-        //这里可以获取打包后的文件目录以及代码code
-        const keys = Object.keys(bundle);
+    // scss({
 
-        for (const key of keys) {
-          const bundler: any = bundle[key as any];
-          //rollup内置方法,将所有输出文件code中的.less换成.css,因为我们当时没有打包less文件
+    // })
+    // {
+    //   name: 'style',
+    //   generateBundle(config, bundle) {
+    //     //这里可以获取打包后的文件目录以及代码code
+    //     const keys = Object.keys(bundle);
 
-          this.emitFile({
-            type: 'asset',
-            fileName: key, //文件名名不变
-            source: bundler.code.replace(/\.less/g, '.css')
-          });
-        }
-      }
-    },
+    //     for (const key of keys) {
+    //       const bundler: any = bundle[key as any];
+    //       //rollup内置方法,将所有输出文件code中的.less换成.css,因为我们当时没有打包less文件
+
+    //       this.emitFile({
+    //         type: 'asset',
+    //         fileName: key, //文件名名不变
+    //         source: bundler.code.replace(/\.scss/g, '.css')
+    //       });
+
+    //       //处理scss
+
+    //     }
+    //   }
+    // },
   ]
 });

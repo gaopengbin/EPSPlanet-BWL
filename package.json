@@ -22,7 +22,8 @@
     "lint:script": "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./",
     "lint:style": "stylelint --fix \"packages/components/src/**/*.{css,less}\"",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "format": "prettier --write play/app.vue packages/components/src"
   },
   "keywords": [],
   "author": "",
@@ -69,10 +70,16 @@
     "vite": "^3.0.9",
     "vite-plugin-dts": "^1.4.1",
     "vitest": "^0.29.2",
-    "vue": "^3.2.36"
+    "vue": "^3.3.4"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "@vue/shared": "^3.3.4",
+    "axios": "^1.4.0",
     "element-plus": "^2.3.9",
-    "mitt": "^3.0.1"
+    "mitt": "^3.0.1",
+    "pinia": "^2.1.6",
+    "rollup-plugin-scss": "3",
+    "sass": "^1.66.1"
   }
 }

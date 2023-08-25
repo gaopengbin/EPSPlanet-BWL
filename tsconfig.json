@@ -4,13 +4,17 @@
     "jsx": "preserve",
     "strict": true,
     "target": "ES2015",
-    "suppressImplicitAnyIndexErrors": true,
     "module": "ESNext",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "lib": ["esnext", "dom"],
     "resolveJsonModule": true,
-    "types": ["unplugin-vue-define-options/macros-global"]
+    "types": ["unplugin-vue-define-options/macros-global"],
+    "preserveSymlinks": false,
+    "paths": {
+      "element-plus": ["node_modules/element-plus"],
+      "@vue/shared": ["node_modules/.pnpm/@vue+shared@3.2.47/node_modules/@vue/shared"],
+    }
   }
 }
