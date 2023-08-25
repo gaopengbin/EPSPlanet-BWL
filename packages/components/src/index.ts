@@ -4,4 +4,4 @@ export * from './icon';
 export * from './test';
 // export * from './utils';
 
-import "./theme/index.scss"
+import './theme/index.scss';

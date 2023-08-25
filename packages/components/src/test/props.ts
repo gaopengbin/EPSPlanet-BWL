@@ -1,9 +1,9 @@
 export const Pros = {
-    /**
-     * test title
-     */
-    title: {
-        type: String,
-        default: '123'
-    }
-}
+  /**
+   * test title
+   */
+  title: {
+    type: String,
+    default: '123'
+  }
+};

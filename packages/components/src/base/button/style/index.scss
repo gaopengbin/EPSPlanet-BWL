@@ -1,4 +1,4 @@
-@import "../../../theme/common/variables.scss";
+@import '../../../theme/common/variables.scss';
 .epsplanet-button {
   z-index: 1;
   position: absolute;
@@ -163,61 +163,61 @@
     margin-right: 20px;
   }
 }
-[data-sunwayTheme="light"] {
+[data-sunwayTheme='light'] {
   .epsplanet-popover {
-    background-color: map-get($panel-bg-color, "light");
+    background-color: map-get($panel-bg-color, 'light');
     .tool-panel {
       .tool-header {
-        background-color: map-get($title-bg-color, "light");
-        color: map-get($panel-font-color, "light");
+        background-color: map-get($title-bg-color, 'light');
+        color: map-get($panel-font-color, 'light');
       }
       .tool-content {
         .el-button--primary {
-          background-color: map-get($button-primary-color, "light");
-          color: map-get($panel-btn-font-color, "light");
+          background-color: map-get($button-primary-color, 'light');
+          color: map-get($panel-btn-font-color, 'light');
         }
         .el-input__inner {
-          background-color: map-get($panel-bg-color, "light");
+          background-color: map-get($panel-bg-color, 'light');
         }
       }
     }
   }
   .el-select-dropdown {
-    background-color: map-get($panel-bg-color, "light");
+    background-color: map-get($panel-bg-color, 'light');
   }
   .epsplanet-button {
-    background-color: map-get($panel-bg-color, "light");
+    background-color: map-get($panel-bg-color, 'light');
     i {
-      color: map-get($panel-font-color, "light");
+      color: map-get($panel-font-color, 'light');
     }
   }
 }
-[data-sunwayTheme="dark"] {
+[data-sunwayTheme='dark'] {
   .epsplanet-popover {
-    background-color: map-get($panel-bg-color, "dark");
+    background-color: map-get($panel-bg-color, 'dark');
     .tool-panel {
       .tool-header {
-        background-color: map-get($title-bg-color, "dark");
-        color: map-get($panel-font-color, "dark");
+        background-color: map-get($title-bg-color, 'dark');
+        color: map-get($panel-font-color, 'dark');
       }
       .tool-content {
         .el-button--primary {
-          background-color: map-get($button-primary-color, "dark");
-          color: map-get($panel-btn-font-color, "dark");
+          background-color: map-get($button-primary-color, 'dark');
+          color: map-get($panel-btn-font-color, 'dark');
         }
         .el-input__inner {
-          background-color: map-get($panel-bg-color, "dark");
+          background-color: map-get($panel-bg-color, 'dark');
         }
       }
     }
   }
   .el-select-dropdown {
-    background-color: map-get($panel-bg-color, "dark");
+    background-color: map-get($panel-bg-color, 'dark');
   }
   .epsplanet-button {
-    background-color: map-get($panel-bg-color, "dark");
+    background-color: map-get($panel-bg-color, 'dark');
     i {
-      color: map-get($panel-font-color, "dark");
+      color: map-get($panel-font-color, 'dark');
     }
   }
 }

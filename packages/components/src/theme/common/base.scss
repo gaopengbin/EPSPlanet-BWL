@@ -1,10 +1,10 @@
-@import "./variables.scss";
+@import './variables.scss';
 
-[data-sunwayTheme="light"] {
-    .epsplanet-panel-base {
-        border-radius: 5px;
-        // border: 1px solid;
-        background-color: map-get($panel-bg-color, "light");
-        color: map-get($panel-font-color, "light");
-    }
+[data-sunwayTheme='light'] {
+  .epsplanet-panel-base {
+    border-radius: 5px;
+    // border: 1px solid;
+    background-color: map-get($panel-bg-color, 'light');
+    color: map-get($panel-font-color, 'light');
+  }
 }

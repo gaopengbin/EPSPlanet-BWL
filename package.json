@@ -4,12 +4,6 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,vue}": [
-      "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./",
-      "stylelint --fix \"packages/components/src/**/*.{css,less}\""
-    ]
-  },
   "scripts": {
     "build:epsplanet": "gulp -f packages/components/script/build/index.ts & pnpm run --filter ./packages/utils build",
     "build:pack": "pnpm run build:epsplanet && cd packages/epsplanet && npm pack",
@@ -22,7 +16,6 @@
     "lint:script": "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./",
     "lint:style": "stylelint --fix \"packages/components/src/**/*.{css,less}\"",
     "prepare": "husky install",
-    "lint-staged": "lint-staged",
     "format": "prettier --write play/app.vue packages/components/src"
   },
   "keywords": [],
