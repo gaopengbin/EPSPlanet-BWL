@@ -1,0 +1,18 @@
+.epsplanet-statusBar {
+  width: 100%;
+  height: 30px;
+  background: rgba(36, 37, 41, 0.65);
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  line-height: 30px;
+  z-index: 10;
+  color: white;
+  font-family: 'PingFang SC';
+  text-align: left;
+  // padding-left: 15%;
+  span {
+    margin-right: 5px;
+    color: white;
+  }
+}

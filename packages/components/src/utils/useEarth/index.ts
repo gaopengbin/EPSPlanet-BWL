@@ -21,6 +21,21 @@ export function useEarth(containerId?: string) {
   }
 }
 
+export function useEarthAsync(containerId?: string) {
+  const { setEarth, getEarth } = useStore();
+  const earth = getEarth(containerId);
+  if (earth) {
+    return Promise.resolve(earth);
+  } else {
+    return new Promise((resolve, reject) => {
+      emitter.on('earthReady', (e: any) => {
+        setEarth(e._viewer.container.id, e);
+        resolve(e);
+      });
+    });
+  }
+}
+
 /**
  * 获取已加载的earth列表
  * @returns earth列表Map对象

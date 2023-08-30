@@ -1,4 +1,5 @@
 export * from './base';
+export * from './effect';
 export * from './icon';
 // export * from './earth';
 export * from './test';

@@ -67,9 +67,11 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
+    "@types/lodash": "^4.14.197",
     "@vue/shared": "^3.3.4",
     "axios": "^1.4.0",
     "element-plus": "^2.3.9",
+    "lodash": "^4.17.21",
     "mitt": "^3.0.1",
     "pinia": "^2.1.6",
     "rollup-plugin-scss": "3",

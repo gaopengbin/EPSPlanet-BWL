@@ -24,6 +24,7 @@ export default defineConfig({
         'pinia',
         'axios',
         '@vue/shared',
+        "lodash"
       ],
       input: ['index.ts'],
       output: [

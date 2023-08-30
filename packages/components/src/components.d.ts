@@ -12,6 +12,11 @@ declare module '@vue/runtime-core' {
     EaIcon: typeof components.Icon;
     EpsplanetEarth: typeof components.Earth;
     EpsplanetButton: typeof components.Button;
+    EpsplanetToolbar: typeof components.Toolbar;
+    EpsplanetBasemap: typeof components.Basemap;
+    EpsplanetStatusbar: typeof components.StatusBar;
+    EpsplanetLayerList: typeof components.LayerList;
+    EpsplanetCloud: typeof components.Cloud;
     EaTest: typeof components.Test;
   }
 }
