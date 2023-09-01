@@ -13,21 +13,10 @@
     <Test :title="''" />
     <el-button @click="openPanel">弹框测试</el-button>
 
-    <EpsplanetEarth
-      container="testA"
-      :showDefaultBasemap="true"
-      @onReady="ready"
-      :showCompass="showCompass"
-    >
+    <EpsplanetEarth container="testA" :showDefaultBasemap="true" @onReady="ready" :showCompass="showCompass">
       <EpsplanetStatusbar :showCamera="false" />
     </EpsplanetEarth>
-    <EpsplanetButton
-      :title="'球'"
-      :icon="'icon-tool_wsjg'"
-      type="panel"
-      :position="position"
-      :panel="panel"
-    >
+    <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
       <!-- <Child /> -->
       <!-- <EpsplanetCloud /> -->
       <EpsplanetLayerList />
@@ -35,54 +24,28 @@
     <!-- <ElButton></ElButton> -->
     <EpsplanetBasemap />
     <EpsplanetToolbar :position="{ top: '50px', left: '20px' }">
-      <EpsplanetButton
-        :title="'球'"
-        :icon="'icon-tool_wsjg'"
-        type="panel"
-        :position="position"
-        :panel="panel"
-      >
+      <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
         <!-- <Child /> -->
         <!-- <EpsplanetCloud /> -->
         <EpsplanetLayerList />
       </EpsplanetButton>
-      <EpsplanetButton
-        :title="'球'"
-        :icon="'icon-tool_wsjg'"
-        type="panel"
-        :position="position"
-        :panel="panel"
-      >
+      <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
         <!-- <Child /> -->
         <EpsplanetCloud />
         <!-- <EpsplanetLayerList /> -->
       </EpsplanetButton>
     </EpsplanetToolbar>
-    <EpsplanetToolbar
-      mode="horizontal"
-      :position="{ top: '150px', left: '20px' }"
-    >
-      <EpsplanetButton
-        :title="'球'"
-        :icon="'icon-tool_wsjg'"
-        type="panel"
-        :position="position"
-        :panel="panel"
-      >
+    <EpsplanetToolbar mode="horizontal" :position="{ top: '150px', left: '20px' }">
+      <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
         <!-- <Child /> -->
         <!-- <EpsplanetCloud /> -->
         <EpsplanetLayerList />
       </EpsplanetButton>
-      <EpsplanetButton
-        :title="'球'"
-        :icon="'icon-tool_wsjg'"
-        type="panel"
-        :position="position"
-        :panel="panel"
-      >
+      <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
         <!-- <Child /> -->
-        <EpsplanetCloud />
+        <!-- <EpsplanetCloud /> -->
         <!-- <EpsplanetLayerList /> -->
+        <EpsplanetPoint />
       </EpsplanetButton>
     </EpsplanetToolbar>
   </div>

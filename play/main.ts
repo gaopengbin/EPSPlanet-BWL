@@ -7,6 +7,7 @@ XE.ready().then(() => {
     const app = createApp(App);
     // app.use(createPinia())
     app.use(epsplanet);
+    console.log('epsplanet', app);
     app.mount('#app');
 })
 

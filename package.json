@@ -68,6 +68,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
     "@types/lodash": "^4.14.197",
+    "@vue-macros/reactivity-transform": "^0.3.22",
     "@vue/shared": "^3.3.4",
     "axios": "^1.4.0",
     "element-plus": "^2.3.9",
@@ -75,6 +76,8 @@
     "mitt": "^3.0.1",
     "pinia": "^2.1.6",
     "rollup-plugin-scss": "3",
-    "sass": "^1.66.1"
+    "sass": "^1.66.1",
+    "tokml": "^0.4.0",
+    "unplugin-vue-macros": "^2.4.14"
   }
 }

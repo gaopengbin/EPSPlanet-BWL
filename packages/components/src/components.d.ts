@@ -16,10 +16,20 @@ declare module '@vue/runtime-core' {
     EpsplanetBasemap: typeof components.Basemap;
     EpsplanetStatusbar: typeof components.StatusBar;
     EpsplanetLayerList: typeof components.LayerList;
+    EpsplanetBlackWhite: typeof components.Blackwhite;
+    EpsplanetMosaic: typeof components.Mosaic;
+    EpsplanetBloom: typeof components.Bloom;
+    EpsplanetSnow: typeof components.Snow;
+    EpsplanetRain: typeof components.Rain;
     EpsplanetCloud: typeof components.Cloud;
+    EpsplanetNightvision: typeof components.Nightvision;
+    EpsplanetBrightness: typeof components.Brightness;
+    EpsplanetShadow: typeof components.Shadow;
+    EpsplanetSilhouette: typeof components.Silhouette;
+    EpsplanetPoint: typeof components.Point;
     EaTest: typeof components.Test;
   }
 }
 // import * as utils from './utils';
 
-export {};
+export { };

@@ -1,26 +1,12 @@
 <template>
   <div class="epsplanet-panel-base layerlist" style="width: 296px">
-    <el-tree
-      ref="treeRef"
-      :data="treeData"
-      show-checkbox
-      node-key="id"
-      :props="defaultProps"
-      :default-checked-keys="defaultChecked"
-      :default-expanded-keys="defaultExpanded"
-      @check-change="handleCheck"
-      @node-expand="handleExpand"
-      @node-collapse="handleCollapse"
-    >
+    <el-tree ref="treeRef" :data="treeData" show-checkbox node-key="id" :props="defaultProps"
+      :default-checked-keys="defaultChecked" :default-expanded-keys="defaultExpanded" @check-change="handleCheck"
+      @node-expand="handleExpand" @node-collapse="handleCollapse">
       <template #default="{ node, data }">
         {{ node.label }}
         <span class="nodeBtn">
-          <a
-            class="iconfont icon-shu-4"
-            @click="locate(data, node)"
-            v-if="node.isLeaf"
-            title="定位"
-          ></a>
+          <a class="iconfont icon-shu-4" @click="locate(data, node)" v-if="node.isLeaf" title="定位"></a>
         </span>
       </template>
     </el-tree>
@@ -57,9 +43,9 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   del();
 });
-function getChildList(node) {
+function getChildList(node: any) {
   let childList: any = [];
-  node.forEach((n) => {
+  node.forEach((n: any) => {
     if (n.children) {
       let child = getChildList(n.children);
       childList.push({

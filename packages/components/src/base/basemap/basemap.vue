@@ -1,28 +1,19 @@
 <template>
   <div class="basemap" style="" @mouseover="overStyle" @mouseleave="leaveStyle">
     <ul class="baseul">
-      <li
-        v-for="(item, index) in basemapList"
-        :key="index"
-        id="transition-box"
-        :style="{
-          transform: isHover ? 'translateX(' + -86 * index + 'px)' : 'none',
-          border: isHover
-            ? item.show
-              ? '3px solid rgba(113, 184, 246, 1)'
-              : '3px solid rgba(35, 145, 242, 0.8)'
-            : '3px solid rgba(44, 47, 56, 0.5)',
-          'z-index': item.show ? 2 : 1
-        }"
-      >
+      <li v-for="(item, index) in basemapList" :key="index" id="transition-box" :style="{
+        transform: isHover ? 'translateX(' + -86 * index + 'px)' : 'none',
+        border: isHover
+          ? item.show
+            ? '3px solid rgba(113, 184, 246, 1)'
+            : '3px solid rgba(35, 145, 242, 0.8)'
+          : '3px solid rgba(44, 47, 56, 0.5)',
+        'z-index': item.show ? 2 : 1
+      }">
         <div class="img-div" @click="selectBasemap(item)">
           <!-- <span :style="{background: item.show? 'rgba(7, 175, 248, 0.5);': 'rgba(7, 175, 248, 0);'}"> -->
-          <span
-            class="hoverbgcolor"
-            :style="item.show ? 'background:rgba(7, 175, 248, 0.5);' : ''"
-          >
-            {{ item.name }}</span
-          >
+          <span class="hoverbgcolor" :style="item.show ? 'background:rgba(7, 175, 248, 0.5);' : ''">
+            {{ item.name }}</span>
           <img :src="item.imgUrl" :alt="item.name" class="image" />
         </div>
       </li>
@@ -72,7 +63,7 @@ const leaveStyle = () => {
   isHover.value = false;
 };
 const initfirstmap = () => {
-  let result = basemapList.value.filter((basemap) => {
+  let result = basemapList.value.filter((basemap: any) => {
     return basemap?.show == true;
   });
   let deepmap: any;

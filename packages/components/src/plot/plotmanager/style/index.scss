@@ -1,0 +1,16 @@
+.plotManager {
+    .el-icon {
+      font-size: medium;
+      margin-left: 5px;
+  
+      &:hover {
+        cursor: pointer;
+        color: aqua;
+      }
+    }
+  
+    .exportBtn {
+      float: right;
+      margin: 10px 0;
+    }
+  }

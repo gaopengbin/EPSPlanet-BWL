@@ -5,6 +5,7 @@ import dts from 'vite-plugin-dts';
 // @ts-ignore
 import DefineOptions from 'unplugin-vue-define-options/vite';
 import scss from 'rollup-plugin-scss';
+// import ReactivityTransform from '@vue-macros/reactivity-transform/vite' 
 
 export default defineConfig({
   test: {
@@ -71,6 +72,7 @@ export default defineConfig({
       // logDiagnostics: true,
     }),
     DefineOptions(),
+    // ReactivityTransform(),
     // scss({
 
     // })
