@@ -1,0 +1,5 @@
+.arrow .label {
+  ::v-deep(.el-form-item__label) {
+    width: 50px !important;
+  }
+}

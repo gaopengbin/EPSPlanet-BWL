@@ -10,7 +10,7 @@
     <span v-show="showMouse">{{ mouseString }}</span>
   </div>
 </template>
-<script lang='ts'>
+<script lang="ts">
 import {
   reactive,
   toRefs,
@@ -18,13 +18,13 @@ import {
   getCurrentInstance,
   onBeforeUnmount,
   defineComponent,
-  computed,
-} from "vue";
+  computed
+} from 'vue';
 import { useEarthAsync } from '../../utils';
 import './style/index.scss';
 import { statusbarProps } from './statusbar';
 export default defineComponent({
-  name: "EpsplanetStatusbar",
+  name: 'EpsplanetStatusbar',
   props: statusbarProps,
   setup(props) {
     console.log(props);
@@ -44,34 +44,34 @@ export default defineComponent({
     const data = reactive({
       showLon: true,
       showLat: true,
-      longitudeString: "",
-      latitudeString: "",
-      heightString: "",
-      headingString: "",
-      pitchString: "",
-      rollString: "",
-      cameraString: "",
-      fpsString: "",
+      longitudeString: '',
+      latitudeString: '',
+      heightString: '',
+      headingString: '',
+      pitchString: '',
+      rollString: '',
+      cameraString: '',
+      fpsString: '',
       baseVelocity: 0.0,
       velocity: 0.0,
       velocityRatio: 1.0,
       lang: {
-        longitude: "经度",
-        latitude: "纬度",
-        height: "高度",
-        fps: "帧率",
-        heading: "偏航角",
-        pitch: "俯仰角",
-        roll: "翻滚角",
-        meter: "米",
-        velocity: "键盘运动速度",
+        longitude: '经度',
+        latitude: '纬度',
+        height: '高度',
+        fps: '帧率',
+        heading: '偏航角',
+        pitch: '俯仰角',
+        roll: '翻滚角',
+        meter: '米',
+        velocity: '键盘运动速度'
       },
       mousePos: {
         lng: 0,
         lat: 0,
-        height: 0,
+        height: 0
       },
-      mouseString: "",
+      mouseString: ''
     });
     let disposer: any = [];
     onMounted(async () => {
@@ -92,12 +92,12 @@ export default defineComponent({
       let _scene = earth.czm.scene;
       const scratchCartograghic = [0, 0, 0];
       earth.czm.viewer.canvas.addEventListener(
-        "mousemove",
+        'mousemove',
         (mouseEvent: any) => {
           const carto = earth.pickPosition(
             {
               x: mouseEvent.offsetX,
-              y: mouseEvent.offsetY,
+              y: mouseEvent.offsetY
             },
             scratchCartograghic
           );
@@ -106,15 +106,15 @@ export default defineComponent({
             data.mousePos.lat = (carto[1] * 180) / Math.PI;
             data.mousePos.height = carto[2];
             data.mouseString =
-              "鼠标位置:" +
+              '鼠标位置:' +
               data.mousePos.lng.toFixed(6) +
-              "° " +
+              '° ' +
               data.mousePos.lat.toFixed(6) +
-              "° " +
+              '° ' +
               data.mousePos.height.toFixed(2) +
-              "m";
+              'm';
           } else {
-            data.mouseString = "暂时无法获取鼠标位置...";
+            data.mouseString = '暂时无法获取鼠标位置...';
           }
         }
       );
@@ -151,7 +151,7 @@ export default defineComponent({
       _scene.debugShowFramesPerSecond = true;
       const tempDisposer = _scene._postRender.addEventListener(() => {
         tempDisposer();
-        _scene._performanceContainer.style.visibility = "hidden"; // 隐藏默认的帧率显示窗口
+        _scene._performanceContainer.style.visibility = 'hidden'; // 隐藏默认的帧率显示窗口
       });
 
       disposer.push(
@@ -159,7 +159,7 @@ export default defineComponent({
           if (_scene._performanceDisplay) {
             data.fpsString = `${data.lang.fps}: ${_scene._performanceDisplay._fpsText.nodeValue} `;
           } else {
-            data.fpsString = "";
+            data.fpsString = '';
           }
         })
       );
@@ -167,25 +167,20 @@ export default defineComponent({
       disposer.push(
         XE.MVVM.track(
           proxy,
-          "baseVelocity",
+          'baseVelocity',
           earth.camera.immersion,
-          "baseVelocity"
+          'baseVelocity'
         )
       );
       disposer.push(
-        XE.MVVM.track(
-          proxy,
-          "velocity",
-          earth.camera.immersion,
-          "velocity"
-        )
+        XE.MVVM.track(proxy, 'velocity', earth.camera.immersion, 'velocity')
       );
       disposer.push(
         XE.MVVM.bind(
           proxy,
-          "velocityRatio",
+          'velocityRatio',
           earth.camera.immersion,
-          "velocityRatio"
+          'velocityRatio'
         )
       );
     }
@@ -209,8 +204,8 @@ export default defineComponent({
       showVelocity,
       showMouse,
       init,
-      del,
+      del
     };
-  },
+  }
 });
 </script>

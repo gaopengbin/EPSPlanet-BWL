@@ -3,7 +3,7 @@ export * from './src/index';
 export * from './src/utils/index';
 import { App } from 'vue';
 import { createPinia } from 'pinia'
-
+import ElementPlus from 'element-plus'
 import "element-plus/theme-chalk/index.css"
 // import "/EPSPlanet_Assets/assets/font/iconfont.css"
 
@@ -21,5 +21,6 @@ export default {
     for (const c in components) {
       app.use((components as any)[c]);
     }
+    app.use(ElementPlus)
   }
 };

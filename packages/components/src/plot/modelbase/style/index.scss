@@ -1,0 +1,57 @@
+.modelbase {
+  .el-select {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .ImgDivFather {
+    height: 312px;
+    /* overflow: auto; */
+    margin: 10px 0;
+  }
+
+  .imgDiv {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+  }
+
+  .spanSlider {
+    position: absolute;
+    margin-top: 3px;
+    left: 0;
+  }
+
+  .spanSwitch {
+    margin: 8px 16px 8px 0;
+    display: inline-block;
+  }
+
+  .el-switch {
+    margin: 0 20px 2px 0;
+  }
+
+  .el-slider,
+  .el-input {
+    width: 83%;
+    margin-left: 17%;
+  }
+  .el-input:first-child {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .imgDiv img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .imgDiv p {
+    width: 80px;
+    margin: 1px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

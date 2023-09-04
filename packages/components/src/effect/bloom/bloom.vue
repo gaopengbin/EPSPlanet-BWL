@@ -2,11 +2,24 @@
   <div class="epsplanet-panel-base" style="width: 296px">
     <el-form ref="form" label-width="70px">
       <el-form-item :label="label.contrast">
-        <el-slider v-model="contrast" :min="0" :max="255" :step="1" show-input :show-input-controls="false"></el-slider>
+        <el-slider
+          v-model="contrast"
+          :min="0"
+          :max="255"
+          :step="1"
+          show-input
+          :show-input-controls="false"
+        ></el-slider>
       </el-form-item>
       <el-form-item :label="label.brightness">
-        <el-slider v-model="brightness" :min="-1" :max="1" :step="0.1" show-input
-          :show-input-controls="false"></el-slider>
+        <el-slider
+          v-model="brightness"
+          :min="-1"
+          :max="1"
+          :step="0.1"
+          show-input
+          :show-input-controls="false"
+        ></el-slider>
       </el-form-item>
     </el-form>
   </div>
@@ -19,12 +32,12 @@ import { ElForm, ElFormItem, ElSlider } from 'element-plus';
 defineOptions({ name: 'EpsplanetBloom' });
 
 const label = {
-  glowOnly: "仅发光图",
-  contrast: "对比度",
-  brightness: "亮度",
-  delta: "光程差",
-  sigma: "sigma",
-  stepSize: "stepSize",
+  glowOnly: '仅发光图',
+  contrast: '对比度',
+  brightness: '亮度',
+  delta: '光程差',
+  sigma: 'sigma',
+  stepSize: 'stepSize'
 };
 
 const glowOnly = ref(false);

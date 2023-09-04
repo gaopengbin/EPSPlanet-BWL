@@ -1,0 +1,15 @@
+.monomer {
+  .el-select {
+    width: 85%;
+    margin-left: 12px;
+  }
+
+  .el-textarea {
+    margin: 18px 0;
+  }
+
+  .el-textarea__inner {
+    min-height: 182px !important;
+    border: 1px solid #535353;
+  }
+}

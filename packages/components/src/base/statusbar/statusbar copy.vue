@@ -15,23 +15,30 @@
 <script setup="context" lang="ts">
 import './style/index.scss';
 import { statusbarProps } from './statusbar';
-import { computed, getCurrentInstance, onBeforeUnmount, onMounted, reactive, ref, toRef, watch } from 'vue';
+import {
+  computed,
+  getCurrentInstance,
+  onBeforeUnmount,
+  onMounted,
+  reactive,
+  ref,
+  toRef,
+  watch
+} from 'vue';
 import { useEarthAsync } from '../../utils';
 // import { $ref } from 'unplugin-vue-macros/macros'
 defineOptions({ name: 'EpsplanetStatusbar' });
 
 const { proxy } = getCurrentInstance() as any;
 
-
-
-const aa = ref(0)
+const aa = ref(0);
 
 const test = reactive({
   a: 1,
   b: 2
 });
-proxy.test = test
-proxy.aa = aa
+proxy.test = test;
+proxy.aa = aa;
 
 const props = defineProps(statusbarProps);
 const {
@@ -104,9 +111,7 @@ onBeforeUnmount(() => {
 const velocityString = computed(() => {
   return ` ${lang.velocity}: ${proxy.velocity.toFixed(
     1
-  )} km/h (${data.baseVelocity.toFixed(1)} × ${data.velocityRatio.toFixed(
-    1
-  )})`;
+  )} km/h (${data.baseVelocity.toFixed(1)} × ${data.velocityRatio.toFixed(1)})`;
 });
 // const velocityString = computed(() => {
 //   return ` ${lang.velocity}: ${velocity.value.toFixed(
@@ -190,14 +195,18 @@ function init() {
 
   disposer.push(
     XE.MVVM.track(
-      proxy, 'baseVelocity', earth.camera.immersion, 'baseVelocity'
+      proxy,
+      'baseVelocity',
+      earth.camera.immersion,
+      'baseVelocity'
     ),
+    XE.MVVM.track(proxy, 'velocity', earth.camera.immersion, 'velocity'),
     XE.MVVM.track(
-      proxy, 'velocity', earth.camera.immersion, 'velocity'
-    ),
-    XE.MVVM.track(
-      proxy, 'velocityRatio', earth.camera.immersion, 'velocityRatio'
-    ),
+      proxy,
+      'velocityRatio',
+      earth.camera.immersion,
+      'velocityRatio'
+    )
     // XE.MVVM.watch(
     //   () => earth.camera.immersion.baseVelocity,
     //   (v: any) => {

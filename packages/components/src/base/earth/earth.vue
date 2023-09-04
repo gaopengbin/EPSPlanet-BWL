@@ -86,6 +86,7 @@ function init() {
             'groundImage',
             'groundRoad',
             'particle',
+            'dynamic', //动态标绘
             'water',
             'model',
             'geoPin', //立体标注

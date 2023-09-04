@@ -2,11 +2,25 @@
   <div class="epsplanet-panel-base" style="width: 296px">
     <el-form ref="form" label-width="70px">
       <el-form-item :label="label.darkness">
-        <el-slider v-model="darkness" :min="0" :max="1" :step="0.01" show-input :show-input-controls="false">
+        <el-slider
+          v-model="darkness"
+          :min="0"
+          :max="1"
+          :step="0.01"
+          show-input
+          :show-input-controls="false"
+        >
         </el-slider>
       </el-form-item>
       <el-form-item :label="label.maximumDistance">
-        <el-slider v-model="maximumDistance" :min="1" :max="1000" :step="1" show-input :show-input-controls="false">
+        <el-slider
+          v-model="maximumDistance"
+          :min="1"
+          :max="1000"
+          :step="1"
+          show-input
+          :show-input-controls="false"
+        >
         </el-slider>
       </el-form-item>
       <el-form-item :label="label.terrainShadow">
@@ -23,12 +37,12 @@ import { ElForm, ElFormItem, ElSlider, ElSwitch } from 'element-plus';
 defineOptions({ name: 'EpsplanetShadow' });
 
 const label = {
-  darkness: "暗度",
-  maximumDistance: "最大距离",
-  normalOffset: "法向量偏移",
-  terrainShadow: "地形阴影",
-  softShadows: "软阴影",
-}
+  darkness: '暗度',
+  maximumDistance: '最大距离',
+  normalOffset: '法向量偏移',
+  terrainShadow: '地形阴影',
+  softShadows: '软阴影'
+};
 
 const terrainShadow = ref(true);
 const softShadows = ref(false);

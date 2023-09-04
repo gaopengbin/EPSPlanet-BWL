@@ -2,8 +2,14 @@
   <div class="epsplanet-panel-base" style="width: 296px">
     <el-form ref="form" label-width="70px">
       <el-form-item :label="title">
-        <el-slider v-model="brightness" :min="min" :max="max" show-input :show-input-controls="false"
-          :step="step"></el-slider>
+        <el-slider
+          v-model="brightness"
+          :min="min"
+          :max="max"
+          show-input
+          :show-input-controls="false"
+          :step="step"
+        ></el-slider>
       </el-form-item>
     </el-form>
   </div>

@@ -25,7 +25,10 @@ export default defineConfig({
         'pinia',
         'axios',
         '@vue/shared',
-        "lodash"
+        "lodash",
+        "tokml",
+        "@element-plus/icons-vue",
+        "strxml"
       ],
       input: ['index.ts'],
       output: [

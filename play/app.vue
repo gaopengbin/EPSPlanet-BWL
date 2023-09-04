@@ -1,57 +1,23 @@
-<!--
- * @Description: 
- * @Date: 2023-02-09 14:28:42
- * @Author: didi
- * @LastEditTime: 2023-05-24 11:29:22
--->
 <template>
   <div>
-    <!-- <ea-button>按钮</ea-button>
-    <ea-earth />
-    <Button>123</Button>
-    <Earth /> -->
     <Test :title="''" />
     <el-button @click="openPanel">弹框测试</el-button>
 
-    <EpsplanetEarth container="testA" :showDefaultBasemap="true" @onReady="ready" :showCompass="showCompass">
+    <EpsplanetEarth
+      container="testA"
+      :showDefaultBasemap="true"
+      @onReady="ready"
+      :showCompass="showCompass"
+    >
       <EpsplanetStatusbar :showCamera="false" />
     </EpsplanetEarth>
-    <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
-      <!-- <Child /> -->
-      <!-- <EpsplanetCloud /> -->
-      <EpsplanetLayerList />
-    </EpsplanetButton>
-    <!-- <ElButton></ElButton> -->
-    <EpsplanetBasemap />
-    <EpsplanetToolbar :position="{ top: '50px', left: '20px' }">
-      <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
-        <!-- <Child /> -->
-        <!-- <EpsplanetCloud /> -->
-        <EpsplanetLayerList />
-      </EpsplanetButton>
-      <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
-        <!-- <Child /> -->
-        <EpsplanetCloud />
-        <!-- <EpsplanetLayerList /> -->
-      </EpsplanetButton>
-    </EpsplanetToolbar>
-    <EpsplanetToolbar mode="horizontal" :position="{ top: '150px', left: '20px' }">
-      <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
-        <!-- <Child /> -->
-        <!-- <EpsplanetCloud /> -->
-        <EpsplanetLayerList />
-      </EpsplanetButton>
-      <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
-        <!-- <Child /> -->
-        <!-- <EpsplanetCloud /> -->
-        <!-- <EpsplanetLayerList /> -->
-        <EpsplanetPoint />
-      </EpsplanetButton>
-    </EpsplanetToolbar>
+
+    <toolbar :position="position" :components="comps"></toolbar>
   </div>
 </template>
 <script lang="ts" setup>
 import { getCurrentInstance, ref, h } from 'vue';
+import toolbar from './toolbar.vue';
 // import { useEarth, Earth, Test } from 'epsplanet';
 // import { useEarth, Earth, Test, usePanel, getWidgets, haveRendered } from 'epsplanet';
 import {
@@ -124,4 +90,46 @@ const openPanel = async () => {
   );
   console.log(wgt, await wgt.getComponent());
 };
+const comps = ref([
+  {
+    label: '点标',
+    component: 'EpsplanetPoint',
+    icon: 'icon-tool_dxhz_dianbiao',
+    panel: {
+      position: { top: 50, left: 50 }
+    }
+  },
+  {
+    label: '折线',
+    component: 'EpsplanetPolyline',
+    icon: 'icon-tool_dxhz_zhexian',
+    panel: {
+      position: { top: 50, left: 50 }
+    }
+  },
+  {
+    label: '多边形',
+    component: 'EpsplanetPolygon',
+    icon: 'icon-tool_dxhz_dbx',
+    panel: {
+      position: { top: 50, left: 50 }
+    }
+  },
+  {
+    label: '贴地图片',
+    component: 'EpsplanetGroundImage',
+    icon: 'icon-tool_dxhz_dbx',
+    panel: {
+      position: { top: 50, left: 50 }
+    }
+  },
+  {
+    label: '贴地道路',
+    component: 'EpsplanetGroundRoad',
+    icon: 'icon-tool_dxhz_dbx',
+    panel: {
+      position: { top: 50, left: 50 }
+    }
+  }
+]);
 </script>
