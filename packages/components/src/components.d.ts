@@ -45,6 +45,16 @@ declare module '@vue/runtime-core' {
     EpsplanetMonomer: typeof components.Monomer;
     EpsplanetParticle: typeof components.Particle;
     EpsplanetWater: typeof components.Water;
+    // 分析组件
+    EpsplanetControlHeight: typeof components.ControlHeight;
+    EpsplanetFlood: typeof components.Flood;
+    EpsplanetCutFill: typeof components.CutFill;
+    EpsplanetContour: typeof components.Contour;
+    EpsplanetLeveling: typeof components.Leveling;
+    EpsplanetLineOfSight: typeof components.LineOfSight;
+    EpsplanetProfile: typeof components.Profile;
+
+
 
     EaTest: typeof components.Test;
   }
@@ -54,4 +64,4 @@ declare let XE: any;
 declare let Cesium: any;
 // import * as utils from './utils';
 
-export {};
+export { };

@@ -4,3 +4,7 @@ export * from './random';
 export { default as directives } from './directives';
 export * from './toGeojson';
 export * from './getRGBA';
+export * from './getExtremum';
+export * from './tools';
+export * from './DepthPolyline';
+export * from './measure';

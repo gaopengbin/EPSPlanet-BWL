@@ -28,7 +28,9 @@ export default defineConfig({
         "lodash",
         "tokml",
         "@element-plus/icons-vue",
-        "strxml"
+        "strxml",
+        "echarts",
+        "element-resize-detector",
       ],
       input: ['index.ts'],
       output: [
