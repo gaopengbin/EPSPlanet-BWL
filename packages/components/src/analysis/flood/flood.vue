@@ -212,7 +212,7 @@ export default defineComponent({
         polygon: {
           hierarchy: Cesium.Cartesian3.fromRadiansArrayHeights(adapCoordi),
           material: new Cesium.Color.fromBytes(64, 157, 253, 150),
-          // perPositionHeight: false,
+          perPositionHeight: true,
           extrudedHeight: new Cesium.CallbackProperty(function (
             time: any,
             result: any

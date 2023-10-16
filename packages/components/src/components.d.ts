@@ -45,6 +45,7 @@ declare module '@vue/runtime-core' {
     EpsplanetMonomer: typeof components.Monomer;
     EpsplanetParticle: typeof components.Particle;
     EpsplanetWater: typeof components.Water;
+    EpsplanetVideo: typeof components.Video;
     // 分析组件
     EpsplanetControlHeight: typeof components.ControlHeight;
     EpsplanetFlood: typeof components.Flood;
@@ -53,8 +54,43 @@ declare module '@vue/runtime-core' {
     EpsplanetLeveling: typeof components.Leveling;
     EpsplanetLineOfSight: typeof components.LineOfSight;
     EpsplanetProfile: typeof components.Profile;
+    EpsplanetFlatten: typeof components.Flatten;
+    EpsplanetViewshed: typeof components.Viewshed;
+    EpsplanetSkylineV2: typeof components.SkylineV2;
+    EpsplanetSkyline: typeof components.Skyline;
+    EpsplanetSliced: typeof components.Sliced;
+    EpsplanetSunShine: typeof components.SunShine;
+    EpsplanetSurfaceOpacity: typeof components.SurfaceOpacity;
+    EpsplanetPotholing: typeof components.Potholing;
+    EpsplanetUnderground: typeof components.Underground;
+    EpsplanetUndergroundV2: typeof components.UndergroundV2;
+    EpsplanetTerrainCover: typeof components.TerrainCover;
+    EpsplanetTerrainShading: typeof components.TerrainShading;
 
+    //测量组件
+    EpsplanetMeasurePoint: typeof components.MeasurePoint;
+    EpsplanetMeasureDistance: typeof components.MeasureDistance;
+    EpsplanetMeasureArea: typeof components.MeasureArea;
+    EpsplanetMeasureHeight: typeof components.MeasureHeight;
+    EpsplanetMeasureGroundDistance: typeof components.MeasureGroundDistance;
+    EpsplanetMeasureGroundArea: typeof components.MeasureGroundArea;
+    EpsplanetMeasureAzimuth: typeof components.MeasureAzimuth;
+    EpsplanetMeasureClear: typeof components.MeasureClear;
 
+    //视角组件
+    EpsplanetCameraViewManager: typeof components.CameraViewManager;
+    EpsplanetCameraHome: typeof components.CameraHome;
+    EpsplanetQuickPosition: typeof components.QuickPosition;
+    EpsplanetScreenShot: typeof components.Screenshot;
+    EpsplanetAviation: typeof components.Aviation;
+
+    //多屏组件
+    EpsplanetDoubleView: typeof components.DoubleView;
+    EpsplanetSliderScreen: typeof components.SliderScreen;
+
+    //其他组件
+    EpsplanetPick: typeof components.Pick;
+    EpsplanetStatistics: typeof components.Statistics;
 
     EaTest: typeof components.Test;
   }

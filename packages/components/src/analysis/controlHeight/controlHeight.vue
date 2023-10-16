@@ -26,6 +26,7 @@
 </template>
 <script lang='ts'>
 /* eslint-disable */
+import "./style/index.scss";
 import {
   reactive,
   toRefs,

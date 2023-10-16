@@ -31,6 +31,11 @@ export default defineConfig({
         "strxml",
         "echarts",
         "element-resize-detector",
+        "file-saver",
+        "xlsx",
+        "@turf/turf",
+        "moment",
+        "fix-webm-duration",
       ],
       input: ['index.ts'],
       output: [

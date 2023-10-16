@@ -18,7 +18,6 @@
     "**/*.css"
   ],
   "author": "gpb",
-  "license": "MIT",
   "description": "",
   "typings": "lib/index.d.ts",
   "repository": {
@@ -29,6 +28,14 @@
     "element-plus": "^2.3.9",
     "mitt": "^3.0.1",
     "pinia": "^2.1.6",
-    "tokml": "^0.4.0"
+    "tokml": "^0.4.0",
+    "strxml": "^1.0.0",
+    "echarts": "^5.4.3",
+    "element-resize-detector": "^1.2.4",
+    "file-saver": "^2.0.5",
+    "xlsx": "^0.18.5",
+    "@turf/turf": "^6.5.0",
+    "moment": "^2.29.4",
+    "fix-webm-duration": "^1.0.5"
   }
 }

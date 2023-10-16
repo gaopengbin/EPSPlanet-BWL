@@ -1,0 +1,33 @@
+.sunshine {
+  .demo-date-picker {
+    display: block;
+    width: 100%;
+    padding: 0px 8px 0px 0px;
+    flex-wrap: wrap;
+  }
+  .demo-date-picker .block:last-child {
+    border-right: none;
+  }
+  .demo-date-picker .demonstration {
+    display: block;
+    color: black;
+    font-size: 14px;
+    padding-top: 6px;
+    margin-bottom: 14px;
+  }
+  .el-input-number {
+    display: block !important;
+  }
+  .floatstyle {
+    float: left;
+  }
+  .floatstyle2 {
+    float: left;
+    width: 60px;
+    margin-left: 8px;
+  }
+  .floatstyle3 {
+    float: left;
+    width: 350px;
+  }
+}

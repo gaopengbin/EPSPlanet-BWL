@@ -48,6 +48,7 @@
 </template>
 
 <script lang="ts">
+import "./style/index.scss";
 import {
   reactive,
   toRefs,

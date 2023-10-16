@@ -8,3 +8,4 @@ export * from './getExtremum';
 export * from './tools';
 export * from './DepthPolyline';
 export * from './measure';
+export { default as label } from './label';

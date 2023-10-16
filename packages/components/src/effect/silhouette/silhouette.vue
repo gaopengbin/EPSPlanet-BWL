@@ -16,7 +16,7 @@
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useEarth } from '../../utils';
 import { ElForm, ElFormItem, ElColorPicker } from 'element-plus';
-defineOptions({ name: 'EpsplanetSnow' });
+defineOptions({ name: 'EpsplanetSilhouette' });
 
 const title = '轮廓颜色';
 const length = ref(0.5);

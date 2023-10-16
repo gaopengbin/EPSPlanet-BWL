@@ -1,63 +1,29 @@
 <template>
   <div class="epsplanet-button" :class="data.randomClass">
-    <i
-      class="iconfont"
-      :class="icon"
-      @click="openPanel"
-      :title="title"
-      :style="{ color: data.iconColor }"
-    ></i>
+    <i class="iconfont" :class="icon" @click="openPanel" :title="title" :style="{ color: data.iconColor }"></i>
     <el-button @click="openPanel" v-if="btnName">{{ btnName }}</el-button>
   </div>
   <!-- 弹出面板 -->
   <teleport :to="data.container" v-if="data.toContainer">
-    <div
-      v-show="data.show && hasPanel"
-      class="epsplanet-popover"
-      :class="data.randomClass"
-      :id="data.randomClass"
-    >
+    <div v-show="data.show && hasPanel" class="epsplanet-popover" :class="data.randomClass" :id="data.randomClass">
       <!-- 边缘拖拽缩放 -->
-      <div
-        class="resizeTop"
-        v-resizeTop:id="data.randomClass"
-        :data-dockMode="dockMode"
-      ></div>
+      <div class="resizeTop" v-resizeTop:id="data.randomClass" :data-dockMode="dockMode"></div>
       <div class="resizeBottom" v-resizeBottom:id="data.randomClass"></div>
       <div class="resizeLeft" v-resizeLeft:id="data.randomClass"></div>
-      <div
-        class="resizeRight"
-        v-resizeRight:id="data.randomClass"
-        :data-dockMode="dockMode"
-      ></div>
-      <div
-        class="resizeBottomLeft"
-        v-resizeBottomLeft:id="data.randomClass"
-      ></div>
-      <div
-        class="resizeBottomRight"
-        v-resizeBottomRight:id="data.randomClass"
-      ></div>
+      <div class="resizeRight" v-resizeRight:id="data.randomClass" :data-dockMode="dockMode"></div>
+      <div class="resizeBottomLeft" v-resizeBottomLeft:id="data.randomClass"></div>
+      <div class="resizeBottomRight" v-resizeBottomRight:id="data.randomClass"></div>
 
       <div v-if="data.opened" class="tool-panel" :class="data.randomClass">
         <div class="tool-header" v-drag v-show="data.showTitle">
           {{ title }}
           <i class="iconfont icon-close" @click="closePanel"></i>
-          <i
-            class="iconfont icon-minus"
-            @click="hiddenPanel"
-            v-show="!dockMode"
-          ></i>
+          <i class="iconfont icon-minus" @click="hiddenPanel" v-show="!dockMode"></i>
         </div>
         <div class="tool-content">
           <slot :btnClass="data.randomClass" />
           <!-- 边缘吸附按钮 -->
-          <div
-            class="collapse"
-            :class="dockMode"
-            v-show="dockMode"
-            @click="collapse"
-          >
+          <div class="collapse" :class="dockMode" v-show="dockMode" @click="collapse">
             <i class="iconfont" :class="data.collapseIcon"></i>
           </div>
         </div>
@@ -98,7 +64,7 @@ const ctx = getCurrentInstance();
 // console.log(ctx)
 const props = defineProps(buttonProps);
 const emit = defineEmits(buttonEmits);
-const { btnName, icon, title, position, type, hasPanel, panel } = props;
+const { btnName, icon, title, position, type, hasPanel, panel, container } = props;
 const dockShowTitle = panel?.showTitle;
 const dockMode = panel?.showTitle;
 const data = reactive({
@@ -112,7 +78,7 @@ const data = reactive({
   showTitle: dockShowTitle,
   isCollapse: true,
   toContainer: false,
-  container: '#app'
+  container: container
 });
 defineExpose(data);
 watch(
@@ -153,11 +119,16 @@ onBeforeMount(() => {
 });
 let earth: any;
 onMounted(async () => {
-  let earth: any = await useEarth();
-  if (earth) {
-    data.container = earth.czm.viewer.container;
+  if (data.container) {
     data.toContainer = true;
+  } else {
+    let earth: any = await useEarth();
+    if (earth) {
+      data.container = earth.czm.viewer.container;
+      data.toContainer = true;
+    }
   }
+
   //按钮位置
   let button = document.getElementsByClassName(
     'epsplanet-button ' + data.randomClass
@@ -251,6 +222,7 @@ function openPanel() {
             p.style.height = panel.size.height + 'px';
           }
           if (panel.position) {
+            // if(dom)
             // debugger
             let pop = dom.parentElement as HTMLElement;
             if (pop.style.top == '') {

@@ -1,0 +1,146 @@
+.videoDelivery {
+
+  .longBtn {
+      width: 300px !important;
+  }
+
+  .addVideo {
+      width: 300px;
+      padding: 10px;
+
+      .el-input:nth-child(2) {
+          margin: 5px 0;
+      }
+  }
+
+  .save {
+      width: 72% !important;
+      margin: 5px 0 5px 5px;
+  }
+
+  .dataExplain {
+      span {
+          width: 40%;
+          display: inline-block;
+          text-align: left;
+      }
+  }
+
+  .heightSet {
+      position: relative;
+
+      span {
+          width: 22%;
+          position: absolute;
+          top: 4px;
+          left: 0;
+          text-align: left;
+      }
+
+      span:nth-child(3) {
+          top: 41px;
+      }
+
+      span:nth-child(5) {
+          top: 78px;
+      }
+
+      span:nth-child(7) {
+          top: 109px;
+      }
+
+      .el-input {
+          width: 77%;
+          margin-left: 18%;
+
+          &:nth-child(4) {
+              margin: 5px 0 5px 18%;
+          }
+      }
+
+      .el-slider {
+          width: 77%;
+          margin-left: 18%;
+      }
+  }
+
+  .el-collapse-item__content {
+      padding: 0;
+  }
+
+  .epsplanet-button {
+      width: 300px;
+      margin: 0;
+
+      .el-button {
+          width: 300px;
+
+          &:hover {
+              background-color: #409EFF;
+              color: #fff;
+          }
+
+          &:focus {
+              background-color: #409EFF;
+              color: #fff;
+          }
+      }
+  }
+
+  .el-select {
+      width: 300px;
+      margin: 5px 0;
+  }
+
+  .el-switch {
+      .el-switch__label {
+          position: absolute;
+          display: none;
+          color: #fff;
+      }
+
+      /*打开时文字位置设置*/
+      .el-switch__label--right {
+          z-index: 1;
+          right: 6px;
+          /*不同场景下可能不同，自行调整*/
+      }
+
+      /*关闭时文字位置设置*/
+      .el-switch__label--left {
+          z-index: 1;
+          left: 6px;
+          /*不同场景下可能不同，自行调整*/
+      }
+
+      /*显示文字*/
+      .el-switch__label.is-active {
+          display: block;
+      }
+
+      .el-switch__core,
+      .el-switch__label {
+          width: 75px !important;
+          line-height: 22px !important;
+          /*开关按钮的宽度大小*/
+      }
+  }
+
+  .el-button {
+      width: 24%;
+
+      &:hover {
+          background-color: #409EFF;
+          color: #fff;
+      }
+
+      &:focus {
+          background-color: #409EFF;
+          color: #fff;
+      }
+  }
+
+  .el-button+.el-button {
+      margin-left: 2px;
+  }
+}

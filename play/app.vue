@@ -3,13 +3,13 @@
     <Test :title="''" />
     <el-button @click="openPanel">弹框测试</el-button>
 
-    <EpsplanetEarth
-      container="testA"
-      :showDefaultBasemap="true"
-      @onReady="ready"
-      :showCompass="showCompass"
-    >
+    <EpsplanetEarth container="testA" :showDefaultBasemap="true" @onReady="ready" :showCompass="showCompass">
       <EpsplanetStatusbar :showCamera="false" />
+      <EpsplanetButton :title="'球'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
+        <!-- <Child /> -->
+        <EpsplanetCloud />
+        <!-- <EpsplanetLayerList /> -->
+      </EpsplanetButton>
     </EpsplanetEarth>
 
     <toolbar :position="position" :components="comps"></toolbar>
@@ -26,10 +26,12 @@ import {
   Test,
   usePanel,
   getWidgets,
-  haveRendered
+  haveRendered,
+  useConfig,
+  getConfig
 } from '@epsplanet/components';
 import Child from './child.vue';
-
+console.log(useConfig.getConfig(),getConfig());
 const context = getCurrentInstance();
 // console.log(context);
 const position = ref({
@@ -66,6 +68,22 @@ const ready = (e: any) => {
       }
     }
   });
+  e.sceneTree.root.children.push({
+    czmObject: {
+      "xbsjType": "Tileset",
+      "xbsjGuid": "d3266895-4795-41a1-92f3-46be5edc6532",
+      "name": "未命名瓦片",
+      "url": "http://localhost/gis/%E5%80%BE%E6%96%9C%E5%88%87%E7%89%87/%E5%A4%A7%E9%9B%81%E5%A1%94/tileset.json",
+      "xbsjPosition": [
+        1.9017002809975097,
+        0.5972446887154512,
+        3.0624089850964736e-9
+      ],
+      "xbsjClippingPlanes": {},
+      "xbsjCustomShader": {}
+    }
+  })
+  e.sceneTree.root.children[1].czmObject.flyTo()
 };
 const openPanel = async () => {
   console.log(getWidgets(), haveRendered(h(Child)));
@@ -91,6 +109,14 @@ const openPanel = async () => {
   console.log(wgt, await wgt.getComponent());
 };
 const comps = ref([
+  {
+    label: '水淹分析',
+    component: 'EpsplanetFlood',
+    icon: 'icon-tool_dxhz_dianbiao',
+    panel: {
+      position: { top: 50, left: 50 }
+    }
+  },
   {
     label: '点标',
     component: 'EpsplanetPoint',

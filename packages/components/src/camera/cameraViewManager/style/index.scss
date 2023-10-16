@@ -1,0 +1,60 @@
+li {
+    list-style: none;
+}
+
+.xbsj-foot-ul {
+    li {
+        i {
+            &:hover {
+                color: aqua;
+                cursor: pointer;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.item-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    width: 450px;
+}
+
+.item-div-default {
+}
+
+.btn {
+    position: absolute;
+    bottom: 10px;
+    left: 190px;
+}
+
+img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.35);
+}
+
+.el-scrollbar ::v-deep {
+    height: auto;
+}
+
+el-icon:hover {
+    color: aqua;
+    background-color: aqua;
+}
+
+.dialog-footer button:first-child {
+    margin-right: 10px;
+}
+
+.edit-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}

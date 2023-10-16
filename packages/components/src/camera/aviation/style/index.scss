@@ -1,0 +1,35 @@
+.aviation {
+    width: 1000px;
+    label {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .name-input {
+      width: 300px;
+    }
+    .el-icon {
+      font-size: large;
+      margin-left: 5px;
+  
+      &:hover {
+        cursor: pointer;
+        color: aqua;
+      }
+    }
+    .el-slider {
+      width: 270px;
+    }
+    .el-collapse {
+      width: 100%;
+    }
+    .currentD {
+      padding-left: 20px;
+    }
+    .activated {
+      color: aqua;
+    }
+    .import {
+      padding-left: 8px;
+    }
+  }
+  

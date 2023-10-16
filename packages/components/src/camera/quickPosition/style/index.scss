@@ -1,0 +1,12 @@
+.main {
+    display: flex;
+    width: 370px;
+    justify-content: space-evenly;
+  }
+  .loc-input {
+    flex-basis: 80px;
+    flex-grow: 1;
+  }
+  .tabs {
+    width: 100%;
+  }

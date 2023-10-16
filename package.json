@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
+    "@turf/turf": "^6.5.0",
     "@types/lodash": "^4.14.197",
     "@vue-macros/reactivity-transform": "^0.3.22",
     "@vue/shared": "^3.3.4",
@@ -74,12 +75,16 @@
     "echarts": "^5.4.3",
     "element-plus": "^2.3.9",
     "element-resize-detector": "^1.2.4",
+    "file-saver": "^2.0.5",
+    "fix-webm-duration": "^1.0.5",
     "lodash": "^4.17.21",
     "mitt": "^3.0.1",
+    "moment": "^2.29.4",
     "pinia": "^2.1.6",
     "rollup-plugin-scss": "3",
     "sass": "^1.66.1",
     "tokml": "^0.4.0",
-    "unplugin-vue-macros": "^2.4.14"
+    "unplugin-vue-macros": "^2.4.14",
+    "xlsx": "^0.18.5"
   }
 }

@@ -15,6 +15,7 @@
 </template>
 <script lang='ts'>
 /* eslint-disable */
+import "./style/index.scss";
 import * as echarts from "echarts";
 import {
   reactive,

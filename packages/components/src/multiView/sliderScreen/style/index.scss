@@ -1,0 +1,27 @@
+.sliderScreen {
+    .point {
+      width: 4px;
+      height: 4px;
+      margin-top: 14px;
+      background-color: #fda800;
+    }
+    .point1 {
+      width: 4px;
+      height: 4px;
+      margin-top: 14px;
+      background-color: #55bf4b;
+    }
+    .title {
+      text-align: center;
+      line-height: 64px;
+    }
+    .select {
+      width: calc(100% - 20px);
+    }
+    .row {
+      width: 300px;
+      margin: 5px;
+      padding: 2px;
+    }
+  }
+  

@@ -46,6 +46,11 @@ export const buttonProps = {
       position: { top: 10, left: 10 },
       dockMode: undefined
     }
+  },
+  container: {
+    type: String,
+    require: false,
+    default: undefined
   }
 };
 

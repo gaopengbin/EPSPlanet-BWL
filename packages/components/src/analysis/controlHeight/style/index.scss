@@ -1,0 +1,21 @@
+.controlHeightAnalysis {
+    .el-radio-group {
+        padding-left: 16px;
+    }
+
+    .el-select {
+        width: 246px;
+    }
+
+    .el-button {
+        width: 60px;
+        padding: 4px;
+        margin-left: 16px;
+    }
+
+    .el-select-dropdown__item.selected {
+        line-height: inherit;
+        height: 20px;
+        font-weight: 400;
+    }
+}
