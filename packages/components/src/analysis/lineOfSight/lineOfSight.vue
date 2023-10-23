@@ -42,7 +42,7 @@ export default defineComponent({
     const { proxy } = getCurrentInstance() as any;
     const thisVue = proxy;
     const data = reactive({
-      _polylineCzm: undefined as any, // 线段对象
+      // _polylineCzm: undefined as any, // 线段对象
       _circleCzm: undefined as any, // 圆对象
       _radius: 0, // 圆的半径
       _disposer: [] as any, // 用于销毁双向绑定资源数组
@@ -56,7 +56,7 @@ export default defineComponent({
       visibleLines: [] as any, // 通视线集合，用于清理
     });
     let handler: any;
-
+    let _polylineCzm: any;
     onMounted(() => {
       earth = useEarth();
       earth.czm.scene.globe.depthTestAgainstTerrain = true; // 开启深度监测
@@ -78,11 +78,11 @@ export default defineComponent({
       if (data.drawMode === "line") {
         // 创建Polyline对象
         let polylineCzm = new XE.Obj.Plots.GeoPolyline(earth);
-        polylineCzm.arcType = "NONE";
+        // polylineCzm.arcType = "NONE";
         polylineCzm.ground = false;
         polylineCzm.creating = true;
         polylineCzm.color = [1, 1, 0, 0.5];
-        data._polylineCzm = polylineCzm;
+        _polylineCzm = polylineCzm;
 
         data._disposer.push(
           XE.MVVM.bind(thisVue, "editing", polylineCzm, "editing"),
@@ -91,7 +91,7 @@ export default defineComponent({
             () => polylineCzm.positions.length,
             () => {
               if (polylineCzm.positions.length > 2) {
-                // console.log("计算");
+                console.log("计算", polylineCzm);
                 polylineCzm.creating = false;
                 polylineCzm.show = false;
                 updateCurrent();
@@ -120,14 +120,24 @@ export default defineComponent({
       } else if (data.drawMode === "circle") {
         // 圆的操作基本同上，只是需要计算一周的通视线
         let circleCzm = new XE.Obj.Plots.GeoCircle(earth);
+        XE.MVVM.watch(() => circleCzm.creating, () => {
+            console.log(circleCzm);
+            if (!circleCzm.creating && circleCzm.positions.length > 1) {
+              circleCzm.show = false;
+              updateCurrent();
+              constructCircle(circleCzm.positions[0], circleCzm.positions[1]);
+            }
+          })
         circleCzm.ground = false;
-        circleCzm.creating = true;
+        
         circleCzm.color = [1, 1, 0, 0.5];
         data._circleCzm = circleCzm;
 
         data._disposer.push(
+          // XE.MVVM.bind(thisVue, "creating", circleCzm, "creating"),
           XE.MVVM.bind(thisVue, "editing", circleCzm, "editing"),
-          XE.MVVM.watch(circleCzm, "creating", () => {
+          XE.MVVM.watch(() => circleCzm.creating, () => {
+            console.log(circleCzm);
             if (!circleCzm.creating && circleCzm.positions.length > 1) {
               circleCzm.show = false;
               updateCurrent();
@@ -145,6 +155,7 @@ export default defineComponent({
             }
           })
         );
+        circleCzm.creating = true;
       }
     }
 
@@ -306,9 +317,9 @@ export default defineComponent({
     function deleteAll() {
       deleteVisibleLines();
       clearBind();
-      if (data._polylineCzm) {
-        data._polylineCzm =
-          data._polylineCzm && (data._polylineCzm as any).destroy();
+      if (_polylineCzm) {
+        _polylineCzm =
+          _polylineCzm && (_polylineCzm as any).destroy();
       }
       if (data._circleCzm) {
         data._circleCzm = data._circleCzm && (data._circleCzm as any).destroy();

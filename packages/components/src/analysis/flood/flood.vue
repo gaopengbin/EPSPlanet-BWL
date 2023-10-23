@@ -61,7 +61,8 @@ export default defineComponent({
     // shp2Geojson,
   },
   setup() {
-    const { proxy } = getCurrentInstance() as any;
+    const { proxy,ctx } = getCurrentInstance() as any;
+    // const ctx = getCurrentInstance();
     let sunwayearth: any;
     const thisVue = proxy;
     const data = reactive({
@@ -92,10 +93,18 @@ export default defineComponent({
     onMounted(() => {
       sunwayearth = useEarth();
       // init();
+      console.log('1111');
     });
     onBeforeUnmount(() => {
       del();
     });
+
+    watch(
+      () => data.creating,
+      () => {
+        console.log(data.creating,'222');
+      }
+    );
 
     function init() {
       sunwayearth.czm.viewer.scene.globe.depthTestAgainstTerrain = true;
@@ -105,14 +114,17 @@ export default defineComponent({
         let polygon = new XE.Obj.Plots.GeoPolygon(sunwayearth);
         _waterCzm = polygon;
         _disposers = [];
+        data.creating = true
+        // _waterCzm.creating = true;
+        console.log(ctx);
         _disposers.push(
-          XE.MVVM.bind(thisVue, "creating", polygon, "creating"),
+          XE.MVVM.bind(ctx, "creating", polygon, "creating"),
 
           XE.MVVM.watch(
             () => polygon.creating,
-            async () => {
-              polygon.creating = data.creating;
-              console.log(polygon.creating);
+            () => {
+              // polygon.creating = data.creating;
+              console.log(polygon.creating, data.creating);
               if (!polygon.creating && polygon.positions.length > 2) {
                 let cellsize = calcCellSize(polygon.positions);
                 data.sample = Number(cellsize);
@@ -124,7 +136,7 @@ export default defineComponent({
             }
           )
         );
-        polygon.creating = true;
+        // polygon.creating = true;
         console.log(polygon);
       }
     }

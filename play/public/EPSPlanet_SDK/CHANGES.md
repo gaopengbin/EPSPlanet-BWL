@@ -1,28 +1,11 @@
 Change Log
 ==========
 
-
-
-### 1.6.3 - 2021-5-24
+### 1.6.1 - 2021-5-17
 ##### Fixes :jojo:
-* 增加矢量数据模型
-* 增加授权机制
-
-### 1.6.2 - 2021-4-20
-##### Fixes :jojo:
-* 增加wms的属性过滤
-
-### 1.6.2 - 2021-4-13
-##### Fixes :wrench:
-* 增加模型动画支持
-
-### 1.6.1 - 2021-10-21
-##### Fixes :zh、gpb
 * 让3dtiles数据的allowPicking属性生效
 * 3dtiles加载采用共享纹理模式
 * WMS图层透明度支持 
-* WMS,WMTS url补充proxy属性
-* WMTS补充format属性
 
 ### 1.6.0 - 2021-4-13
 ##### Fixes :wrench:
@@ -263,7 +246,7 @@ Change Log
 
 ### 1.3.9 - 2020-5-26
 ##### Additions :tada:
-* 增加对顶点纹理坐标偏移的扩展(SUNWAY_vertex_texture_transform)
+* 增加对顶点纹理坐标偏移的扩展(XBSJ_vertex_texture_transform)
 ##### Fixes :wrench:
 * 修复实例模型数量为1时程序异常的问题
 * 修复部分没有根矩阵的3dtiles数据不能显示的问题

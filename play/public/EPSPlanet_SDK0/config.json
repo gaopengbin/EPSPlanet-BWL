@@ -1,0 +1,33 @@
+{
+    "config": {
+        "name": "test",
+        "version": "1.0.0",
+        "description": "test",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "author": "",
+        "license": "ISC"
+    },
+    "widgets": [
+        {
+            "title": "test",
+            "component": "EpsplanetCloud",
+            "props": {
+                "name": "test"
+            },
+            "type": "panel",
+            "panel": {
+                "size": {
+                    "width": "300px",
+                    "height": "300px"
+                },
+                "position": {
+                    "left": 10,
+                    "top": 10
+                }
+            }
+        }
+    ]
+}

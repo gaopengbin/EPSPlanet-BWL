@@ -185,7 +185,7 @@ function openPanel() {
     if (!data.opened) {
       data.iconColor = 'aqua';
       data.opened = true;
-      data.show = true;
+
 
       setTimeout(() => {
         let dom = document.getElementsByClassName(
@@ -224,7 +224,13 @@ function openPanel() {
           if (panel.position) {
             // if(dom)
             // debugger
-            let pop = dom.parentElement as HTMLElement;
+            let pop = document.getElementsByClassName(
+              'epsplanet-popover ' + data.randomClass
+            )[0] as HTMLElement;
+            // let pop = dom.parentElement as HTMLElement;
+
+
+
             if (pop.style.top == '') {
               pop.style.top = panel.position.top + 'px';
             }
@@ -243,7 +249,7 @@ function openPanel() {
             // pop.style.bottom = panel.position.bottom + "px";
           }
         }
-
+        data.show = true;
         emit('click', ctx);
       }, 10);
     } else {

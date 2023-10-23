@@ -1,4 +1,4 @@
-import { h, isVNode, render, resolveComponent } from 'vue';
+import { h, isVNode, render, resolveComponent, getCurrentInstance } from 'vue';
 import panel from '../../base/panel/panel.vue';
 import type { AppContext, ComponentPublicInstance, VNode } from 'vue';
 // const shared = require('@vue/shared');
@@ -37,7 +37,6 @@ export function usePanel(
   appContext?: AppContext | null,
   slot?: VNode | String
 ) {
-  // console.log(options, appContext, slot)
   if (
     (options.onlyOne && options.type == 'panel') ||
     options.type == 'switch'
@@ -65,7 +64,6 @@ export function usePanel(
   const container = document.createElement('div');
   const instance = initInstance(options, container, appContext, slot)!;
   const vm = instance?.proxy as any;
-
   for (const prop in options) {
     if (hasOwn(options, prop) && !hasOwn(vm.$props, prop)) {
       vm[prop as string] = options[prop];
@@ -75,6 +73,7 @@ export function usePanel(
     if (!(slot as any).type.components) {
       (slot as any).type.components = {};
     }
+
     (slot as any).type.components = Object.assign(
       (slot as any).type.components,
       appContext?.app._context.components

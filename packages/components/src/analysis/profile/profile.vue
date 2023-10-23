@@ -67,7 +67,7 @@ export default defineComponent({
     });
     function watchResize() {
       // let elementResizeDetectorMaker = require("element-resize-detector");
-      var erd = elementResizeDetectorMaker(null);
+      var erd = elementResizeDetectorMaker();
       // var erdUltraFast = elementResizeDetectorMaker({
       //   strategy: "scroll",
       //   callOnAdd: true, //callOnAdd选项，用于确定在添加侦听器时是否应调用它们。默认为true。
@@ -75,7 +75,7 @@ export default defineComponent({
       //   //被调用（不会阻止其被调用）
       //   debug: true,
       // });
-      erd.listenTo(null, document.querySelector(".myBarChart"), function (element) {
+      erd.listenTo(document.querySelector(".myBarChart"), function () {
         if (_chart) {
           _chart.resize();
         }

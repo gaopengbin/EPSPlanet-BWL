@@ -1,3 +1,237 @@
 {
-    "test": "test"
+    "layer": [
+        {
+            "czmObject": {
+                "xbsjType": "Tileset",
+                "xbsjGuid": "d3266895-4795-41a1-92f3-46be5edc6532",
+                "name": "未命名瓦片",
+                "url": "http://localhost/gis/%E5%80%BE%E6%96%9C%E5%88%87%E7%89%87/%E5%A4%A7%E9%9B%81%E5%A1%94/tileset.json",
+                "xbsjPosition": [
+                    1.9017002809975097,
+                    0.5972446887154512,
+                    3.0624089850964736e-9
+                ],
+                "xbsjClippingPlanes": {},
+                "xbsjCustomShader": {}
+            }
+        },
+        {
+            "title": "分组",
+            "children": [
+                {
+                    "czmObject": {
+                        "xbsjType": "Imagery",
+                        "name": "贺兰山东麓",
+                        "rectangle": [
+                            1.8549608612104038,
+                            0.6759967905155257,
+                            1.8554696069610521,
+                            0.6763643920091744
+                        ],
+                        "xbsjImageryProvider": {
+                            "ArcGisMapServerImageryProvider": {
+                                "url": "http://120.48.115.17:6080/arcgis/rest/services/Map/MapServer"
+                            },
+                            "type": "ArcGisMapServerImageryProvider"
+                        }
+                    }
+                },
+                {
+                    "czmObject": {
+                        "xbsjType": "Imagery",
+                        "xbsjGuid": "dac9c9ae-9faf-430d-a34f-cafd01541485",
+                        "name": "USA Population",
+                        "customProp": {
+                            "legend": "http://localhost:8080/geoserver/topp/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=states"
+                        },
+                        "rectangle": [
+                            -2.1769739945944906,
+                            0.4355637921690517,
+                            -1.1688443646134319,
+                            0.8616993331721227
+                        ],
+                        "xbsjImageryProvider": {
+                            "WebMapServiceImageryProvider": {
+                                "url": "http://localhost:8080/geoserver/topp/wms",
+                                "format": "image/png",
+                                "layers": "states",
+                                "styles": "population",
+                                "tilingScheme": "Geographic",
+                                "srs": "EPSG:4326"
+                            },
+                            "type": "WebMapServiceImageryProvider"
+                        }
+                    }
+                },
+                {
+                    "czmObject": {
+                        "xbsjType": "Imagery",
+                        "xbsjGuid": "79f73a61-41f9-48fd-a06f-5278d130ef2d",
+                        "name": "DYT",
+                        "customProp": {
+                            "legend": "http://jojo1986.cn:8188/geoserver/sunway/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=DYT"
+                        },
+                        "rectangle": [
+                            1.90157089947826,
+                            0.5970564779503371,
+                            1.9018298532637943,
+                            0.5974626115224404
+                        ],
+                        "xbsjImageryProvider": {
+                            "XbsjImageryProvider": {},
+                            "UrlTemplateImageryProvider": {},
+                            "WebMapServiceImageryProvider": {
+                                "url": "http://jojo1986.cn:8188/geoserver/sunway/wms",
+                                "format": "image/png",
+                                "layers": "DYT",
+                                "styles": "sunway:DYT",
+                                "tilingScheme": "Geographic",
+                                "srs": "EPSG:4326"
+                            },
+                            "type": "WebMapServiceImageryProvider"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "widget": [
+        {
+            "title": "测试主题",
+            "component": "changeTheme",
+            "icon": "icon-tab_wapian_secai",
+            "type": "panel",
+            "position": {
+                "right": 150,
+                "top": 90
+            },
+            "panel": {
+                "position": {
+                    "left": 100,
+                    "top": 100
+                }
+            },
+            "props": {
+                "name": "test13141"
+            }
+        },
+        {
+            "title": "测试22",
+            "component": "test",
+            "icon": "icon-tool_wsjg",
+            "type": "panel",
+            "position": {
+                "left": 50,
+                "top": 90
+            },
+            "panel": {
+                "position": {
+                    "left": 100,
+                    "top": 100
+                }
+            },
+            "props": {
+                "name": "test13141"
+            }
+        },
+        {
+            "title": "点标",
+            "component": "EpsplanetPoint",
+            "icon": "icon-tool_wsjg",
+            "type": "panel",
+            "position": {
+                "left": 90,
+                "top": 230
+            },
+            "panel": {
+                "position": {
+                    "left": 50,
+                    "top": 50
+                }
+            }
+        },
+        {
+            "title": "图层树",
+            "component": "EpsplanetLayerList",
+            "icon": "icon-tool_wsjg",
+            "type": "panel",
+            "position": {
+                "left": 90,
+                "top": 190
+            },
+            "panel": {
+                "position": {
+                    "left": 10,
+                    "top": 10
+                }
+            }
+        },
+        {
+            "title": "统计分析",
+            "component": "EpsplanetStatistics",
+            "icon": "icon-tool_wsjg",
+            "type": "panel",
+            "position": {
+                "left": 90,
+                "top": 90
+            },
+            "panel": {
+                "position": {
+                    "left": 10,
+                    "top": 10
+                }
+            }
+        },
+        {
+            "title": "测试",
+            "component": "EpsplanetRain",
+            "icon": "icon-tool_wsjg",
+            "type": "switch",
+            "position": {
+                "left": 10,
+                "top": 50
+            }
+        },
+        {
+            "title": "测试",
+            "component": "EpsplanetStatusbar",
+            "icon": "icon-tool_wsjg",
+            "type": "nopanel",
+            "position": {
+                "left": 10,
+                "top": 50
+            },
+            "props": {
+                "showCamera": false
+            },
+            "container": "#testA"
+        },
+        {
+            "title": "测试",
+            "component": "EpsplanetEarth",
+            "icon": "icon-gongju-7",
+            "type": "panel",
+            "position": {
+                "left": 10,
+                "top": 500
+            },
+            "props": {
+                "container":"earth1",
+                "showDefaultBasemap": true,
+                "showDistanceLegend": true,
+                "showCompass": true
+            },
+            "panel":{
+                "size":{
+                    "width": 300,
+                    "height": 300
+                },
+                "position": {
+                    "left": 100,
+                    "top": 100
+                }
+            },
+            "container": ""
+        }
+    ]
 }

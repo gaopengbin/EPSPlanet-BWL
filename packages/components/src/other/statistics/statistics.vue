@@ -36,7 +36,6 @@
             <el-tab-pane label="统计结果" name="统计结果">
                 <el-table :data="data.tableList" border height="350" id="resTable">
                     <el-table-column v-for="item in data.sTableHeader" :prop="item.prop" :label="item.label" />
-
                 </el-table>
             </el-tab-pane>
             <el-tab-pane label="检索详情" name="检索详情">
@@ -380,7 +379,6 @@ const flyTo = () => {
             }
         }
     }
-
 }
 
 const clearQuery = () => {

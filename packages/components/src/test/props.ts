@@ -2,7 +2,7 @@ export const Pros = {
   /**
    * test title
    */
-  title: {
+  name: {
     type: String,
     default: '123'
   }

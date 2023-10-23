@@ -1,3 +1,4 @@
+import { isProxy, toRaw } from 'vue';
 import { emitter } from '../common';
 import { useStore } from '../strore';
 
@@ -10,7 +11,11 @@ export function useEarth(containerId?: string) {
   const { setEarth, getEarth } = useStore();
   const earth = getEarth(containerId);
   if (earth) {
-    return earth;
+    if (isProxy(earth)) {
+      return toRaw(earth);
+    }else{
+      return earth;
+    }
   } else {
     return new Promise((resolve, reject) => {
       emitter.on('earthReady', (e: any) => {
@@ -25,7 +30,11 @@ export function useEarthAsync(containerId?: string) {
   const { setEarth, getEarth } = useStore();
   const earth = getEarth(containerId);
   if (earth) {
-    return Promise.resolve(earth);
+    if (isProxy(earth)) {
+      return Promise.resolve(toRaw(earth));
+    }else{
+      return Promise.resolve(earth);
+    }
   } else {
     return new Promise((resolve, reject) => {
       emitter.on('earthReady', (e: any) => {

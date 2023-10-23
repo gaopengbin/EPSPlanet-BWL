@@ -11,3 +11,5 @@ export * from './icon';
 export * from './test';
 
 import './theme/index.scss';
+
+import "./theme/font/iconfont.css"
