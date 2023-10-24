@@ -1,28 +1,26 @@
 <br />
 <br />
 <div style="text-align:center">
-<b style="font-size:30px">Easyest</b>
-<p>基于Vite4+TypeScript的Vue3组件库开发框架</p>
-<img style="display:inline" src="https://img.shields.io/npm/v/kitty-ui" />
+<b style="font-size:30px">EPSPlanet-BWL</b>
+<p>基于Vite4+TypeScript+EPSPlanetSDK的Vue3三维组件库开发框架</p>
 
-<img style="display:inline;margin-left:10px" src="https://img.shields.io/npm/dt/kitty-ui" />
+
+![](https://img.shields.io/badge/-Vue%203-g)
+![](https://img.shields.io/badge/node-%20%3E%3D%2016-47c219)
+![](https://img.shields.io/badge/-TypeScript-blue)
+![](https://img.shields.io/badge/-Vite4-green)
+![](https://img.shields.io/badge/-按需加载-orange)
+![](https://img.shields.io/badge/-暗黑模式-gray)
+![](https://img.shields.io/badge/-主题切换-pink)
+
 </div>
 
-**Easyest**是一个 **Vue3** 组件库开发环境框架,采用最新的 `Vite4+TypeScript` 为技术栈,支持`按需加载`,`单元测试`,`自动打包与发布`等功能,让我们能更专注于业务组件的开发。
-
-## 了解更多
-
-如果你想了解整个 Vue3 框架的搭建细节,可以点击 扫码关注公众号 查看完整系列教程,有问题可以直接留言
-
-![qrcode_for_gh_10744d2f9624_258 (1).jpg](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0924c195c477419192fd8f1b395ebb76~tplv-k3u1fbpfcp-watermark.image?)
+**EPSPlanet-BWL**是一个 **Vue3+EPSPlanetSDK** 三维组件库开发环境框架,采用最新的 `Vite4+TypeScript` 为技术栈,支持`按需加载`等功能,让我们能快速搭建起一个webgis三维展示系统。
 
 ## 官网地址
 
-[Easyest](https://easyestui.github.io/easyest/)
+[EPSPlanet-BWL](https://gaopengbin.github.io/EPSGIS-DEV-PORTAL/)
 
-## 技术交流群
-
-点击<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=crNHhLZYUpx3MHdlzD2r3NcE93WKt_w7&jump_from=webapi&authKey=4KF8ltIhPHIbXHudldjvq7Q/W6COfs+ycjKTRmIquQsJL0nCy+gU6CGb53mGpIMc">768732857</a> 加群
 
 ## 快速启动
 
@@ -41,17 +39,18 @@ pnpm install
 - 打包组件库与工具库
 
 ```
-pnpm run build:easyest
+pnpm run build:epsplanet
+```
+
+- 打包成可安装tgz包
+
+```
+pnpm run build:pack
 ```
 
 - 启动测试项目
 
 ```
-pnpm run easyest:dev
+pnpm run epsplanet:dev
 ```
 
-- 启动静态文档站点
-
-```
-pnpm run docs:dev
-```

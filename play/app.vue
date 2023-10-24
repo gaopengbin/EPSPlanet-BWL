@@ -6,12 +6,12 @@
     <EpsplanetEarth container="testA" :showDefaultBasemap="true" @onReady="ready" :showCompass="showCompass"
       style="height: 96vh;">
       <!-- <EpsplanetStatusbar :showCamera="false" /> -->
-      <EpsplanetButton :title="'属性查询'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
-        <!-- <Child /> -->
+      <EpsplanetButton :title="'组件测试'" :icon="'icon-tool_wsjg'" type="panel" :position="position" :panel="panel">
+        <Child />
         <!-- <EpsplanetCloud /> -->
         <!-- <EpsplanetLayerList /> -->
         <!-- <query /> -->
-        <fontClass />
+        <!-- <fontClass /> -->
       </EpsplanetButton>
     </EpsplanetEarth>
 

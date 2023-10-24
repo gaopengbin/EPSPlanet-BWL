@@ -1,7 +1,6 @@
 <template>
     <div class="child">
-        123
-        <el-button>123</el-button>
+        没出意外！
     </div>
 </template>
 
@@ -25,6 +24,6 @@ XE.MVVM.watch(
 .child {
     width: 100px;
     height: 100px;
-    background-color: red;
+    background-color: rgb(211, 211, 211);
 }
 </style>
